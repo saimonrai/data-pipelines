@@ -1,7 +1,22 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   var1: value1
-jobs:
-- job: One
-  steps:
-  - script: echo First step ever 1!
+# jobs:
+# - job: One
+#   steps:
+#   - script: echo First step ever 1!
+
+steps:
+  - task: AzureResourceManagerTemplateDeployment@3
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'Chase card(7c6f42e9-3c78-4ea6-823b-6a915526ae46)'
+      subscriptionId: '7c6f42e9-3c78-4ea6-823b-6a915526ae46'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'analytics'
+      location: 'Southeast Asia'
+      templateLocation: 'Linked artifact'
+      csmFile: 'c8vyDev/ARMTemplateForFactory.json'
+      csmParametersFile: 'c8vyDev/ARMTemplateParametersForFactory.json'
+      overrideParameters: '--factoryName c8vyProd'
+      deploymentMode: 'Incremental'
