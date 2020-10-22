@@ -18,5 +18,5 @@ steps:
       templateLocation: 'Linked artifact'
       csmFile: 'c8vyDev/ARMTemplateForFactory.json'
       csmParametersFile: 'c8vyDev/ARMTemplateParametersForFactory.json'
-      overrideParameters: '--factoryName c8vyProd'
+      overrideParameters: '-factoryName c8vyProd'
       deploymentMode: 'Incremental'
