@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "c8vyDev"
 		},
+		"AzureDataLakeStorage_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},
